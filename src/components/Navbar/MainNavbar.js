@@ -1,22 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Navbar({ toggleMenu }) {
   return (
     <Wrapper>
-      <h1>Portfolio Name</h1>
+      <h1>Emerson Lau</h1>
       <div className='mobile-icon' onClick={toggleMenu}>
         <FaBars />
+      </div>
+      <div className='menu-container'>
+        <ul>
+          <LinkLi to='/'>Portfolio</LinkLi>
+          <LinkLi to='about'>About</LinkLi>
+          <LinkLi to='contact'>Contact</LinkLi>
+        </ul>
       </div>
     </Wrapper>
   );
 }
 const Wrapper = styled.nav`
-  height: 80px;
+  height: 90px;
   background-color: grey;
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
   @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
   }
   .mobile-icon {
     display: none;
@@ -31,4 +46,19 @@ const Wrapper = styled.nav`
       color: white;
     }
   }
+  .menu-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .menu-container ul {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+`;
+const LinkLi = styled(Link)`
+  color: white;
+  text-decoration: none;
+  padding-right: 30px;
 `;
