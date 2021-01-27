@@ -32,6 +32,7 @@ export const Wrapper = styled.nav`
   }
 
   .menu-container ul {
+    display: flex;
     @media screen and (max-width: 768px) {
       display: none;
     }
