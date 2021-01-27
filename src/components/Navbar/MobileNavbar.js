@@ -2,13 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Hamburger from './Hamburger';
 
 export default function SidebarNav({ toggleMenu, isOpen }) {
   return (
     <Wrapper isOpen={isOpen} onClick={toggleMenu}>
-      <div className='icon'>
-        <Icon />
-      </div>
       <div className='menu-container'>
         <ul>
           <LinkLi to='/'>Portfolio</LinkLi>
@@ -35,15 +33,6 @@ const Wrapper = styled.aside`
   opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
 
-  .icon {
-    position: absolute;
-    top: 1.2rem;
-    right: 1.5rem;
-    background: transparent;
-    font-size: 2rem;
-    cursor: pointer;
-    outline: none;
-  }
   .menu-container ul {
     display: flex;
     flex-direction: column;

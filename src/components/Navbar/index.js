@@ -8,10 +8,9 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  console.log(isOpen);
   return (
     <>
-      <MainNavbar toggleMenu={toggleMenu} />
+      <MainNavbar isOpen={isOpen} toggleMenu={toggleMenu} />
       <MobileNavbar isOpen={isOpen} toggleMenu={toggleMenu} />
     </>
   );

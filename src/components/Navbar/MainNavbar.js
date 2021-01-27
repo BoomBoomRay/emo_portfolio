@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Hamburger from './Hamburger';
 
-export default function Navbar({ toggleMenu }) {
+export default function Navbar({ isOpen, toggleMenu }) {
   return (
     <Wrapper>
       <h1>Emerson Lau</h1>
       <div className='mobile-icon' onClick={toggleMenu}>
-        <FaBars />
+        <Hamburger isOpen={isOpen} />
       </div>
       <div className='menu-container'>
         <ul>
@@ -30,23 +31,22 @@ const Wrapper = styled.nav`
   padding: 15px;
   @media screen and (max-width: 768px) {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
   .mobile-icon {
     display: none;
     @media screen and (max-width: 768px) {
+      z-index: 9999;
       display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: white;
     }
   }
   .menu-container {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+    display: block;
     margin-top: 10px;
     margin-bottom: 10px;
   }
