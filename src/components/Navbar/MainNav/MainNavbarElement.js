@@ -1,27 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Hamburger from './Hamburger';
 
-export default function Navbar({ isOpen, toggleMenu }) {
-  return (
-    <Wrapper>
-      <h1>Emerson Lau</h1>
-      <div className='mobile-icon' onClick={toggleMenu}>
-        <Hamburger isOpen={isOpen} />
-      </div>
-      <div className='menu-container'>
-        <ul>
-          <LinkLi to='/'>Portfolio</LinkLi>
-          <LinkLi to='about'>About</LinkLi>
-          <LinkLi to='contact'>Contact</LinkLi>
-        </ul>
-      </div>
-    </Wrapper>
-  );
-}
-const Wrapper = styled.nav`
+export const Wrapper = styled.nav`
   height: 90px;
   background-color: grey;
   width: 100%;
@@ -57,7 +37,7 @@ const Wrapper = styled.nav`
     }
   }
 `;
-const LinkLi = styled(Link)`
+export const LinkLi = styled(Link)`
   color: white;
   text-decoration: none;
   padding-right: 30px;

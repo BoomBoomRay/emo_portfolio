@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import MainNavbar from './MainNavbar';
-import MobileNavbar from './MobileNavbar';
+import MainNavbar from './MainNav/MainNavbar';
+import MobileNavbar from './MobileNav/MobileNavbar';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

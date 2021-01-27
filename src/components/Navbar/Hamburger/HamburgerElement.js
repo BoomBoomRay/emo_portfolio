@@ -1,17 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-export default function Hamburger({ isOpen }) {
-  console.log(isOpen);
-  return (
-    <HamburgerDiv>
-      <span className={isOpen ? 'open' : ''}></span>
-      <span className={isOpen ? 'open1' : ''}></span>
-      <span className={isOpen ? 'open2' : ''}></span>
-    </HamburgerDiv>
-  );
-}
-const HamburgerDiv = styled.div`
+export const HamburgerDiv = styled.div`
   width: 2em;
   height: 2em;
   position: relative;

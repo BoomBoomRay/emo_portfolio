@@ -1,24 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Hamburger from './Hamburger';
 
-export default function SidebarNav({ toggleMenu, isOpen }) {
-  return (
-    <Wrapper isOpen={isOpen} onClick={toggleMenu}>
-      <div className='menu-container'>
-        <ul>
-          <LinkLi to='/'>Portfolio</LinkLi>
-          <LinkLi to='about'>About</LinkLi>
-          <LinkLi to='contact'>Contact</LinkLi>
-        </ul>
-      </div>
-    </Wrapper>
-  );
-}
-
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -41,10 +25,10 @@ const Wrapper = styled.aside`
     list-style: none;
   }
 `;
-const Icon = styled(FaTimes)`
+export const Icon = styled(FaTimes)`
   color: white;
 `;
-const LinkLi = styled(Link)`
+export const LinkLi = styled(Link)`
   color: white;
   font-size: 1.5rem;
   margin-top: 10px;
