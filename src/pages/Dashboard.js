@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import { Navbar } from '../components/index';
+import styled from 'styled-components';
+import { Navbar, Home } from '../components/index';
 
 const Dashboard = () => {
   return (
-    <main>
+    <Wrapper>
       <Navbar />
-      <h1>Dashbaord</h1>
-    </main>
+      <Home />
+    </Wrapper>
   );
 };
 export default Dashboard;
+
+const Wrapper = styled.main`
+  height: 100vh;
+`;

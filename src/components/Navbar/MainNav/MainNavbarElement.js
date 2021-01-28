@@ -8,6 +8,7 @@ export const Wrapper = styled.nav`
   align-items: center;
   flex-direction: column;
   padding: 15px;
+  margin-bottom: 100px;
 
   h1 {
     font-family: var(--ff-primary);

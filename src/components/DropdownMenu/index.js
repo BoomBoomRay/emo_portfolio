@@ -14,8 +14,8 @@ export default function DropDown() {
         </div>
         <DropDownContainer>
           <MenuLink to='/'>Home</MenuLink>
-          <MenuLink>Portoflio1</MenuLink>
-          <MenuLink>Portfoiolo2</MenuLink>
+          <MenuLink to='/'>Portoflio1</MenuLink>
+          <MenuLink to='/'>Portfoiolo2</MenuLink>
         </DropDownContainer>
       </Wrapper>
     </>
@@ -53,6 +53,7 @@ const Wrapper = styled.div`
   &:hover ${DropDownContainer} {
     visibility: visible;
     opacity: 1;
+    z-index: 999;
   }
   &:hover ${CloseIcon} {
     transform: rotate(180deg);
