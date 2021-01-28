@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 import { RiArrowUpSLine } from 'react-icons/ri';
 
-export default function DropDown() {
+export default function DropDown({ scrollstate }) {
   return (
     <>
-      <Wrapper>
+      <Wrapper scrollstate={scrollstate}>
         <div className='portfolio-div'>
           <p>Portfolio</p>
           <CloseIcon />
@@ -22,7 +22,10 @@ export default function DropDown() {
   );
 }
 
-const CloseIcon = styled(RiArrowUpSLine)``;
+const CloseIcon = styled(RiArrowUpSLine)`
+  /* Not working, need to find solution */
+  color: ${({ scrollstate }) => (scrollstate === 'top' ? 'black' : 'white')};
+`;
 const MenuLink = styled(Link)`
   color: black;
   padding: 12px 16px;
@@ -65,6 +68,10 @@ const Wrapper = styled.div`
     &:hover {
       color: red;
       transition: all 0.2s ease-in-out;
+    }
+    p {
+      color: ${({ scrollstate }) =>
+        scrollstate === 'top' ? 'black' : 'white'};
     }
   }
 `;
