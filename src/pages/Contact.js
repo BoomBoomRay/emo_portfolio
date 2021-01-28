@@ -1,12 +1,12 @@
 import React from 'react';
-import { Navbar, Footer } from '../components';
+import { Navbar, Footer, Wrapper } from '../components';
 
 export default function Contact() {
   return (
-    <div>
+    <Wrapper>
       <Navbar />
       <h1>Contact</h1>
       <Footer />
-    </div>
+    </Wrapper>
   );
 }

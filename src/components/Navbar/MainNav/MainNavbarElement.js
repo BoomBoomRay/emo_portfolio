@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.nav`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
   height: 90px;
   width: 100%;
   display: flex;
@@ -52,7 +57,7 @@ export const Wrapper = styled.nav`
   }
 `;
 export const LinkLi = styled(Link)`
-  color: black;
+  color: ${({ scrollstate }) => (scrollstate === 'top' ? 'black' : 'white')};
   text-decoration: none;
   padding-right: 40px;
   &:hover {
