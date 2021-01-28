@@ -10,7 +10,9 @@ export default function DropDown({ scrollstate }) {
       <Wrapper scrollstate={scrollstate}>
         <div className='portfolio-div'>
           <p>Portfolio</p>
-          <CloseIcon />
+          <CloseIcon
+            style={{ color: scrollstate === 'top' ? 'black' : 'white' }}
+          />
         </div>
         <DropDownContainer>
           <MenuLink to='/'>One</MenuLink>
@@ -22,10 +24,7 @@ export default function DropDown({ scrollstate }) {
   );
 }
 
-const CloseIcon = styled(RiArrowUpSLine)`
-  /* Not working, need to find solution */
-  color: ${({ scrollstate }) => (scrollstate === 'top' ? 'black' : 'white')};
-`;
+const CloseIcon = styled(RiArrowUpSLine)``;
 const MenuLink = styled(Link)`
   color: black;
   padding: 12px 16px;
@@ -68,6 +67,9 @@ const Wrapper = styled.div`
     &:hover {
       color: red;
       transition: all 0.2s ease-in-out;
+      p {
+        color: red;
+      }
     }
     p {
       color: ${({ scrollstate }) =>
