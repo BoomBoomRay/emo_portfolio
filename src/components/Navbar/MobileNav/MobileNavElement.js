@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.aside`
@@ -23,11 +22,10 @@ export const Wrapper = styled.aside`
     margin-top: 50px;
     align-items: center;
     list-style: none;
+    font-family: var(--ff-secondary);
   }
 `;
-export const Icon = styled(FaTimes)`
-  color: white;
-`;
+
 export const LinkLi = styled(Link)`
   color: white;
   font-size: 1.5rem;

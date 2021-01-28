@@ -1,3 +1,3 @@
 import Navbar from './Navbar/index';
-
-export { Navbar };
+import DropDownMenu from './DropdownMenu/index';
+export { Navbar, DropDownMenu };
