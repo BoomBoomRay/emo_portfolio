@@ -1,3 +1,5 @@
 import Navbar from './Navbar/index';
 import DropDownMenu from './DropdownMenu/index';
-export { Navbar, DropDownMenu };
+import Home from './Home/index';
+
+export { Navbar, DropDownMenu, Home };
