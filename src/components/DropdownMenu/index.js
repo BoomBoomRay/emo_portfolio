@@ -13,9 +13,9 @@ export default function DropDown() {
           <CloseIcon />
         </div>
         <DropDownContainer>
-          <MenuLink to='/'>Home</MenuLink>
-          <MenuLink to='/'>Portoflio1</MenuLink>
-          <MenuLink to='/'>Portfoiolo2</MenuLink>
+          <MenuLink to='/'>One</MenuLink>
+          <MenuLink to='/'>Two</MenuLink>
+          <MenuLink to='/'>Three</MenuLink>
         </DropDownContainer>
       </Wrapper>
     </>
