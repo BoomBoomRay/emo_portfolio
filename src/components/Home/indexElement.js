@@ -97,5 +97,8 @@ export const Section = styled.div`
       grid-column: span 2 / auto;
       grid-row: span 2 / auto;
     }
+    .class-vwide {
+      grid-column: span 3 / auto;
+    }
   }
 `;

@@ -21,6 +21,10 @@
     url('//db.onlinewebfonts.com/t/bb2e1211dfd31103079dbce7c49e1d4e.svg#DINNeuzeitGroteskLTW01-BdCn')
       format('svg');
 }
+@font-face {
+  font-family: 'didot';
+  src: url('./assets/fonts/didot-htf-l11-light-ital.ttf');
+}
 
 /* Variables ================================================== */
 
@@ -36,4 +40,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  position: relative;
 }
