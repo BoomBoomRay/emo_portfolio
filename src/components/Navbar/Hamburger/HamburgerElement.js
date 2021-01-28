@@ -19,7 +19,7 @@ export const HamburgerDiv = styled.div`
     position: absolute;
     height: 5px;
     width: 90%;
-    background: white;
+    background: black;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -58,6 +58,7 @@ export const HamburgerDiv = styled.div`
   /* Transformation */
 
   .open {
+    background: white;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -66,10 +67,12 @@ export const HamburgerDiv = styled.div`
     left: 8px;
   }
   .open1 {
+    background: white;
     width: 0%;
     opacity: 0;
   }
   .open2 {
+    background: white;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);

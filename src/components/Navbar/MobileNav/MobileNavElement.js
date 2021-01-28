@@ -22,6 +22,7 @@ export const Wrapper = styled.aside`
     margin-top: 50px;
     align-items: center;
     list-style: none;
+    font-family: var(--ff-secondary);
   }
 `;
 
