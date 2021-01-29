@@ -4,7 +4,7 @@ import { Wrapper } from './ContactFormElement';
 export default function ContactForm() {
   return (
     <Wrapper>
-      <h1>Contact Us</h1>
+      <h1>Contact</h1>
       <form>
         <div>
           <input label='Name' placeholder='Name' />
