@@ -8,19 +8,23 @@ export default function Navbar({ isOpen, toggleMenu }) {
   const [scrollState, setScrollState] = useState('top');
 
   useEffect(() => {
+    let isSubscribed = true;
     listener = document.addEventListener('scroll', (e) => {
       const scrolled = document.scrollingElement.scrollTop;
-      if (scrolled >= 120) {
-        if (scrollState !== 'notTop') {
-          setScrollState('notTop');
-        }
-      } else {
-        if (scrollState !== 'top') {
-          setScrollState('top');
+      if (isSubscribed) {
+        if (scrolled >= 120) {
+          if (scrollState !== 'notTop') {
+            setScrollState('notTop');
+          }
+        } else {
+          if (scrollState !== 'top') {
+            setScrollState('top');
+          }
         }
       }
     });
     return () => {
+      isSubscribed = false;
       document.removeEventListener('scroll', listener);
     };
   }, [scrollState]);
