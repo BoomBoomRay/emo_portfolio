@@ -6,4 +6,7 @@ export default function Wrapper({ children }) {
 }
 const Container = styled.div`
   padding-top: 200px;
+  @media (max-width: 800px) {
+    padding-top: 0;
+  }
 `;

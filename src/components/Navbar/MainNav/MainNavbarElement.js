@@ -19,8 +19,8 @@ export const Wrapper = styled.nav`
     font-family: var(--ff-primary);
     font-size: 3rem;
   }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
+    position: relative;
     h1 {
       font-size: 2rem;
     }
@@ -29,7 +29,11 @@ export const Wrapper = styled.nav`
     align-items: center;
     justify-content: space-between;
   }
-
+  @media (max-width: 414px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
   .mobile-icon {
     display: none;
     @media screen and (max-width: 768px) {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HamburgerDiv = styled.div`
   width: 2em;
-  height: 2em;
+  height: 1.5em;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
