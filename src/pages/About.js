@@ -61,7 +61,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1em;
   padding: 20px;
-  height: 100vh;
+  text-align: center;
   .about-div-container {
     width: 100%;
   }
