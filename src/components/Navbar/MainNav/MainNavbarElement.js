@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.nav`
-  position: fixed;
+  position: ${({ about, contact }) =>
+    about === 'About' || contact === 'Contact' ? 'relative' : 'fixed'};
   top: 0;
   right: 0;
   left: 0;

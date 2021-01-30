@@ -3,9 +3,10 @@ import Hamburger from '../Hamburger/Hamburger';
 import DropDownMenu from '../../DropdownMenu';
 import { Wrapper, LinkLi } from './MainNavbarElement';
 
-export default function Navbar({ isOpen, toggleMenu }) {
+export default function Navbar({ isOpen, toggleMenu, ...props }) {
   let listener;
   const [scrollState, setScrollState] = useState('top');
+  const { about, contact } = props;
 
   useEffect(() => {
     let isSubscribed = true;
@@ -30,7 +31,7 @@ export default function Navbar({ isOpen, toggleMenu }) {
   }, [scrollState]);
 
   return (
-    <Wrapper>
+    <Wrapper about={about} contact={contact}>
       <h1 style={{ visibility: isOpen ? 'hidden' : 'visible' }}>Emerson Lau</h1>
       <div className='mobile-icon' onClick={toggleMenu}>
         <Hamburger isOpen={isOpen} />

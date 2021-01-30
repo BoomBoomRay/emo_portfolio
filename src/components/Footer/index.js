@@ -20,4 +20,9 @@ const Wrapper = styled.section`
   div {
     font-family: 'didot';
   }
+  @media (max-width: 400px) {
+    div {
+      font-size: 10px;
+    }
+  }
 `;
