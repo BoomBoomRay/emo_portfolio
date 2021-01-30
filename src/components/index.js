@@ -4,5 +4,6 @@ import Home from './Home/index';
 import Footer from './Footer/index';
 import Wrapper from './Wrapper/index';
 import ContactForm from './ContactForm/index';
+import Modal from './Modal/index';
 
-export { Navbar, DropDownMenu, Home, Footer, Wrapper, ContactForm };
+export { Navbar, DropDownMenu, Home, Footer, Wrapper, ContactForm, Modal };
