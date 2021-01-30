@@ -24,7 +24,9 @@ export default function Home() {
           ></div>
         ))}
       </Section>
-      <Modal selectedImg={selectedImg} />
+      {selectedImg && (
+        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </>
   );
 }
