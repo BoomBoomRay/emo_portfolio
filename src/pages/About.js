@@ -4,8 +4,8 @@ import { Navbar, Footer, Wrapper } from '../components';
 
 export default function About() {
   return (
-    <Wrapper>
-      <Navbar />
+    <Wrapper about='About'>
+      <Navbar about='About' />
       <Container>
         <div className='about-div-container'>
           <div>first blog of writing</div>
