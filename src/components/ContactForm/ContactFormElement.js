@@ -26,10 +26,16 @@ export const Wrapper = styled.div`
     border: 2px solid #ccc;
     border-radius: 4px;
     font-family: var(--ff-secondary);
-    outline-color: red;
+    outline-color: rgb(204);
   }
+
+  form div span {
+    font-size: 12px;
+    font-family: var(--ff-secondary);
+  }
+
   form textarea {
-    outline-color: red;
+    outline-color: rgb(204);
   }
   form div {
     padding-top: 15px;

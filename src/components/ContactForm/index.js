@@ -14,6 +14,7 @@ export default function ContactForm() {
   const handleChange = (e) => {
     const { value, name } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
+    setErrorMessage((prevState) => ({ ...prevState, [name]: '' }));
   };
 
   const sendContactEmail = (contactInfo) => {
@@ -21,22 +22,20 @@ export default function ContactForm() {
       .post('http://localhost:3000/contact', contactInfo)
       .then((data) => {
         setOnSuccess({ boolean: true, message: data.data.message });
+        setState({ from: '', subject: '', text: '' });
       })
       .catch((err) => {
         setErrorMessage({
-          from: err.response.from,
-          subject: err.response.subject,
-          text: err.response.text,
+          from: err.response.data.from,
+          subject: err.response.data.subject,
+          text: err.response.data.text,
         });
       });
   };
 
-  console.log(errorMessage);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     sendContactEmail(state);
-    setState({ from: '', subject: '', text: '' });
   };
 
   const { from, text, subject } = state;
@@ -52,7 +51,11 @@ export default function ContactForm() {
             type='email'
             label='Email'
             placeholder='Email'
+            style={{
+              borderColor: !errorMessage.from ? '#ccc' : 'red',
+            }}
           />
+          <span style={{ color: 'red' }}>{errorMessage['from']}</span>
         </div>
         <div>
           <input
@@ -62,7 +65,11 @@ export default function ContactForm() {
             type='text'
             label='Subject'
             placeholder='Subject'
+            style={{
+              borderColor: !errorMessage.subject ? '#ccc' : 'red',
+            }}
           />
+          <span style={{ color: 'red' }}>{errorMessage['subject']}</span>
         </div>
         <div>
           <textarea
@@ -72,7 +79,11 @@ export default function ContactForm() {
             type='text'
             label='Message'
             placeholder='Message'
+            style={{
+              borderColor: !errorMessage.text ? '#ccc' : 'red',
+            }}
           />
+          <span style={{ color: 'red' }}>{errorMessage['text']}</span>
         </div>
         <div>
           {onSuccess.boolean ? (
