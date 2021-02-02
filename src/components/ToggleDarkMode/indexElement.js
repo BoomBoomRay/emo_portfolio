@@ -40,9 +40,11 @@ export const Label = styled.label`
   }
 
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(
+      ${(props) => (props.darkmode ? '26px' : '0px')}
+    );
+    -ms-transform: translateX(${(props) => (props.darkmode ? '26px' : '0px')});
+    transform: translateX(${(props) => (props.darkmode ? '26px' : '0px')});
   }
 
   /* Rounded sliders */

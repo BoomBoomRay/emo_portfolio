@@ -7,12 +7,8 @@ export default function ToggleDarkMode() {
   console.log(darkMode);
   return (
     <>
-      <Label className='switch'>
-        <input
-          onClick={handleDarkMode}
-          type='checkbox'
-          darkmode={darkMode ? 1 : 0}
-        ></input>
+      <Label darkmode={darkMode} className='switch'>
+        <input onClick={handleDarkMode} type='checkbox'></input>
         <span
           style={{ backgroundColor: darkMode ? '#2196f3' : '#ccc' }}
           className='slider round'
