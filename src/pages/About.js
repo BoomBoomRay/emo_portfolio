@@ -9,7 +9,6 @@ export default function About() {
 
   return (
     <Wrapper about='About'>
-      <Navbar about='About' />
       <Container darkmode={darkMode ? 1 : 0}>
         <div className='about-div-container'>
           <h2>About</h2>
