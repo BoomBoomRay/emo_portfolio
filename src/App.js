@@ -41,4 +41,8 @@ const Container = styled.div`
   position: relative;
   padding-bottom: 100px;
   background: ${({ darkmode }) => (darkmode ? 'black' : 'white')};
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 `;
