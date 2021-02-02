@@ -3,9 +3,13 @@ import styled, { css } from 'styled-components';
 export const Label = styled.label`
   position: relative;
   display: inline-block;
-  width: 42px;
-  height: 18px;
+  width: 38px;
+  height: 13px;
   margin-left: 12px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 
   input {
     opacity: 0;
@@ -17,22 +21,22 @@ export const Label = styled.label`
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 0;
+    left: 3px;
     right: 0;
     bottom: 0;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: ${({ isOpen }) => (isOpen ? '0' : '0.4s')};
+    transition: ${({ isOpen }) => (isOpen ? '0' : '0.4s')};
   }
 
   .slider:before {
     position: absolute;
     content: '';
-    height: 10px;
-    width: 10px;
-    left: 2px;
+    height: 6px;
+    width: 6px;
+    left: 1px;
     bottom: 4px;
     background-color: white;
-    transition: 0.4s;
+    transition: ${({ isOpen }) => (isOpen ? '0' : '0.4s')};
   }
 
   input:focus + .slider {

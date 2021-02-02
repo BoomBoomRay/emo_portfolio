@@ -19,7 +19,7 @@ export const HamburgerDiv = styled.div`
     position: absolute;
     height: 5px;
     width: 90%;
-    background: black;
+    background: ${({ darkmode }) => (darkmode ? 'white' : 'black')};
     border-radius: 9px;
     opacity: 1;
     left: 0;

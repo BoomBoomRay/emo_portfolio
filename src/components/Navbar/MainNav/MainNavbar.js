@@ -35,11 +35,12 @@ export default function Navbar({ isOpen, toggleMenu, ...props }) {
 
   return (
     <Wrapper about={about} contact={contact} darkmode={darkMode}>
-      <div className='nav-header-container'>
-        <h1 style={{ visibility: isOpen ? 'hidden' : 'visible' }}>
-          Emerson Lau
-        </h1>
-        <ToggleButton />
+      <div
+        className='nav-header-container'
+        style={{ visibility: isOpen ? 'hidden' : 'visible' }}
+      >
+        <h1>Emerson Lau</h1>
+        <ToggleButton isOpen={isOpen} />
       </div>
       <div className='mobile-icon' onClick={toggleMenu}>
         <Hamburger isOpen={isOpen} />
