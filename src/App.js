@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Dashboard, Contact, Error, About } from './pages';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Context } from './context/context';
 
 function App() {
+  const { darkMode } = useContext(Context);
   return (
     <Router>
       <Container>
