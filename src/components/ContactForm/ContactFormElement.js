@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   h1 {
     margin-bottom: 20px;
     text-align: center;
+    color: ${({ darkmode }) => (darkmode ? 'white' : 'black')};
     font-family: var(--ff-secondary);
   }
   textarea {

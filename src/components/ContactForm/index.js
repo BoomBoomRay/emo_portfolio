@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { Wrapper } from './ContactFormElement';
+import { Context } from '../../context/context';
 
 export default function ContactForm() {
+  const { darkMode } = useContext(Context);
   const [state, setState] = useState({ from: '', subject: '', text: '' });
   const [onSuccess, setOnSuccess] = useState({ boolean: false, message: '' });
   const [errorMessage, setErrorMessage] = useState({
@@ -40,7 +42,7 @@ export default function ContactForm() {
 
   const { from, text, subject } = state;
   return (
-    <Wrapper>
+    <Wrapper darkmode={darkMode}>
       <h1>Contact</h1>
       <form onSubmit={handleSubmit}>
         <div>
