@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Navbar, Footer, Wrapper } from '../components';
 import { TiSocialInstagram } from 'react-icons/ti';
+import { Context } from '../context/context';
 
 export default function About() {
+  const { darkMode } = useContext(Context);
+
   return (
     <Wrapper about='About'>
       <Navbar about='About' />
-      <Container>
+      <Container darkmode={darkMode ? 1 : 0}>
         <div className='about-div-container'>
           <h2>About</h2>
           <p>
@@ -24,8 +27,14 @@ export default function About() {
             Mobile: 604 122 1222 <br />
             Social:
             <span>
-              <a href='https://instagram.com/emmolau' target='_'>
-                <TiSocialInstagram />
+              <a
+                className='instagram-svg'
+                href='https://instagram.com/emmolau'
+                target='_'
+              >
+                <TiSocialInstagram
+                  style={{ color: darkMode ? 'white' : 'black' }}
+                />
               </a>
             </span>
           </p>
@@ -62,6 +71,16 @@ const Container = styled.div`
   gap: 1em;
   padding: 20px;
   text-align: center;
+
+  h2 {
+    color: ${({ darkmode }) => (darkmode ? 'white' : 'black')};
+  }
+  p {
+    color: ${({ darkmode }) => (darkmode ? 'white' : 'black')};
+  }
+  .instagram-svg:hover {
+    color: red;
+  }
   .about-div-container {
     width: 100%;
   }

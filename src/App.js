@@ -8,7 +8,7 @@ function App() {
   const { darkMode } = useContext(Context);
   return (
     <Router>
-      <Container>
+      <Container darkmode={darkMode}>
         <Switch>
           <Route exact path='/'>
             <Dashboard />
@@ -36,4 +36,5 @@ const Container = styled.div`
   display: block;
   position: relative;
   padding-bottom: 100px;
+  background: ${({ darkmode }) => (darkmode ? 'black' : 'white')};
 `;

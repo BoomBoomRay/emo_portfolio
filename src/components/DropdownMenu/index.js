@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import { Context } from '../../context/context';
 import { RiArrowUpSLine } from 'react-icons/ri';
 
 export default function DropDown({ scrollstate }) {
+  const { darkMode } = useContext(Context);
+
   return (
     <>
-      <Wrapper scrollstate={scrollstate}>
+      <Wrapper scrollstate={scrollstate} darkmode={darkMode ? 1 : 0}>
         <div className='portfolio-div'>
           <p>Portfolio</p>
           <CloseIcon
-            style={{ color: scrollstate === 'top' ? 'black' : 'white' }}
+            style={{
+              color: darkMode
+                ? 'white'
+                : scrollstate === 'top'
+                ? 'black'
+                : 'white',
+            }}
           />
         </div>
         <DropDownContainer>
@@ -72,8 +80,8 @@ const Wrapper = styled.div`
       }
     }
     p {
-      color: ${({ scrollstate }) =>
-        scrollstate === 'top' ? 'black' : 'white'};
+      color: ${({ scrollstate, darkmode }) =>
+        darkmode ? 'white' : scrollstate === 'top' ? 'black' : 'white'};
     }
   }
 `;

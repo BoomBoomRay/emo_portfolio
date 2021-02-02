@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Hamburger from '../Hamburger/Hamburger';
 import DropDownMenu from '../../DropdownMenu';
 import { Wrapper, LinkLi } from './MainNavbarElement';
+import ToggleButton from '../../ToggleDarkMode/index';
+import { Context } from '../../../context/context';
 
 export default function Navbar({ isOpen, toggleMenu, ...props }) {
-  let listener;
   const [scrollState, setScrollState] = useState('top');
   const { about, contact } = props;
+  const { darkMode } = useContext(Context);
+  let listener;
 
   useEffect(() => {
     let isSubscribed = true;
@@ -31,18 +34,31 @@ export default function Navbar({ isOpen, toggleMenu, ...props }) {
   }, [scrollState]);
 
   return (
-    <Wrapper about={about} contact={contact}>
-      <h1 style={{ visibility: isOpen ? 'hidden' : 'visible' }}>Emerson Lau</h1>
+    <Wrapper about={about} contact={contact} darkmode={darkMode}>
+      <div className='nav-header-container'>
+        <h1 style={{ visibility: isOpen ? 'hidden' : 'visible' }}>
+          Emerson Lau
+        </h1>
+        <ToggleButton />
+      </div>
       <div className='mobile-icon' onClick={toggleMenu}>
         <Hamburger isOpen={isOpen} />
       </div>
       <div className='menu-container'>
         <ul>
           <DropDownMenu scrollstate={scrollState} />
-          <LinkLi scrollstate={scrollState} to='about'>
+          <LinkLi
+            scrollstate={scrollState}
+            darkmode={darkMode ? 1 : 0}
+            to='about'
+          >
             About
           </LinkLi>
-          <LinkLi scrollstate={scrollState} to='contact'>
+          <LinkLi
+            scrollstate={scrollState}
+            darkmode={darkMode ? 1 : 0}
+            to='contact'
+          >
             Contact
           </LinkLi>
         </ul>
