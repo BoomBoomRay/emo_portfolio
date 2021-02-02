@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { Context } from '../../context/context';
 
 export default function Footer() {
+  const { darkMode } = useContext(Context);
   return (
-    <Wrapper>
+    <Wrapper darkmode={darkMode ? 1 : 0}>
       <div>&copy; Raymond Romero</div>
       <div>All photos &copy; Emerson Lau </div>
     </Wrapper>
@@ -19,6 +21,7 @@ const Wrapper = styled.section`
   padding: 1rem;
   div {
     font-family: 'didot';
+    color: ${({ darkmode }) => (darkmode ? 'white' : 'black')};
   }
   @media (max-width: 400px) {
     div {

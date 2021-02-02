@@ -5,5 +5,15 @@ import Footer from './Footer/index';
 import Wrapper from './Wrapper/index';
 import ContactForm from './ContactForm/index';
 import Modal from './Modal/index';
+import ToggleButton from './ToggleDarkMode/index';
 
-export { Navbar, DropDownMenu, Home, Footer, Wrapper, ContactForm, Modal };
+export {
+  Navbar,
+  DropDownMenu,
+  Home,
+  Footer,
+  Wrapper,
+  ContactForm,
+  Modal,
+  ToggleButton,
+};

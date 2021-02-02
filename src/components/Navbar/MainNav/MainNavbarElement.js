@@ -15,10 +15,16 @@ export const Wrapper = styled.nav`
   flex-direction: column;
   padding: 15px;
   margin-bottom: 100px;
+  .nav-header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
   h1 {
     font-family: var(--ff-primary);
     font-size: 3rem;
+    color: ${({ darkmode }) => (darkmode ? 'white' : 'black')};
   }
   @media screen and (max-width: 800px) {
     position: relative;
@@ -62,7 +68,8 @@ export const Wrapper = styled.nav`
   }
 `;
 export const LinkLi = styled(Link)`
-  color: ${({ scrollstate }) => (scrollstate === 'top' ? 'black' : 'white')};
+  color: ${({ scrollstate, darkmode }) =>
+    darkmode ? 'white' : scrollstate === 'top' ? 'black' : 'white'};
   text-decoration: none;
   padding-right: 40px;
   &:hover {
