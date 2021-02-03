@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   const sendContactEmail = (contactInfo) => {
     axios
-      .post('http://localhost:3000/contact', contactInfo)
+      .post('/contact', contactInfo)
       .then((data) => {
         setOnSuccess({ boolean: true, message: data.data.message });
         setState({ from: '', subject: '', text: '' });
