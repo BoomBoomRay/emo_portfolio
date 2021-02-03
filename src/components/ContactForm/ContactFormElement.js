@@ -17,7 +17,6 @@ export const Wrapper = styled.div`
     border: 2px solid #ccc;
     border-radius: 4px;
     /* background-color: #f8f8f8; */
-    font-size: 16px;
     resize: none;
     font-family: var(--ff-secondary);
   }
