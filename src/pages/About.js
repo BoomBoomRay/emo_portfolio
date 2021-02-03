@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Navbar, Footer, Wrapper } from '../components';
+import { Footer, Wrapper } from '../components';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { Context } from '../context/context';
 

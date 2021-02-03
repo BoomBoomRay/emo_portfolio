@@ -9,9 +9,9 @@ export default function Navbar({ isOpen, toggleMenu, ...props }) {
   const [scrollState, setScrollState] = useState('top');
   const { about, contact } = props;
   const { darkMode } = useContext(Context);
-  let listener;
 
   useEffect(() => {
+    let listener;
     let isSubscribed = true;
     listener = document.addEventListener('scroll', (e) => {
       const scrolled = document.scrollingElement.scrollTop;
